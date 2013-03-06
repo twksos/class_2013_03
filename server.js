@@ -41,8 +41,8 @@ app.post('/', function(req, res) {
     });
 });
 
-
-app.listen(process.env.PORT);
+var port = process.env.PORT || 80
+app.listen(port);
 function match_var(regex, text){
     if (regex.test(text)){
         return text.match(regex)[1];
