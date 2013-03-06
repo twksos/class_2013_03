@@ -3,7 +3,7 @@ var url = require("url");
 var crypto = require('crypto');
 var token = 'token';
 
-var app = express();
+var app = express.createServer(express.logger())
 app.use(express.bodyParser());
 app.get('/', function(req, res) {
     var queries = url.parse(req.url, true).query
