@@ -21,7 +21,7 @@ function simsimi(me,sender,msg_type,text,res) {
                 console.log(json);
                 if (json.result == 100) return_msg = json.response;
                 if (return_msg.indexOf('微') > 0 && return_msg.indexOf('信')>0) return_msg = "哎呀，我刚才发了个呆。";
-                if (return_msg.indexOf('扣') > 0 && return_msg.indexOf('号')>0) return_msg = "哎呀，我刚才发了个呆。";
+                if (return_msg.indexOf('扣') > 0 && return_msg.indexOf('号')>0) return_msg = "哎呀，我刚才又发了个呆。";
                 var response = '<xml>' + '<ToUserName><![CDATA[' + sender + ']]></ToUserName>' + '<FromUserName><![CDATA[' + me + ']]></FromUserName>' + '<CreateTime>' + Date.now() + '</CreateTime>' + '<MsgType><![CDATA[text]]></MsgType>' + '<Content><![CDATA[' + return_msg + ']]></Content>' + '<FuncFlag>0</FuncFlag>' + '</xml>';
                 res.writeHead(200, {'Content-Type': 'text/plain'});
                 res.end(response);
