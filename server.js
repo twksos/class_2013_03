@@ -10,7 +10,7 @@ function simsimi(me,sender,msg_type,text,res) {
             host: 'sandbox.api.simsimi.com',
             path: '/request.p?key=ab3c48c2-1d95-4266-92f1-e1436aab9b18&text=' + text + '&lc=ch'
         };
-        var return_msg = '我是傻的。';
+        var return_msg = 'https://github.com/twksos/class_2013_03';
         http.get(options, function(simsimi_res) {
             var reply = '';
             simsimi_res.addListener('data', function(data) {
