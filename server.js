@@ -21,7 +21,7 @@ function simsimi(me,sender,msg_type,text,res) {
                 console.log(json);
                 if (json.result == 100) return_msg = json.response;
                 else return_msg = '不好意思，小黄鸡闹别扭了：' + json.msg;
-                if (return_msg.indexOf('代码在哪里') >= 0 ) return_msg += "代码在：https://github.com/twksos/class_2013_03";
+                if (return_msg.indexOf('代码') >= 0 ) return_msg += "代码在：https://github.com/twksos/class_2013_03";
                 if (return_msg.indexOf('微') > 0 && return_msg.indexOf('信')>0) return_msg = "哎呀，我刚才发了个呆。";
                 if (return_msg.indexOf('扣') > 0 && return_msg.indexOf('号')>0) return_msg = "哎呀，我刚才又发了个呆。";
                 var response = '<xml>' + '<ToUserName><![CDATA[' + sender + ']]></ToUserName>' + '<FromUserName><![CDATA[' + me + ']]></FromUserName>' + '<CreateTime>' + Date.now() + '</CreateTime>' + '<MsgType><![CDATA[text]]></MsgType>' + '<Content><![CDATA[' + return_msg + ']]></Content>' + '<FuncFlag>0</FuncFlag>' + '</xml>';
