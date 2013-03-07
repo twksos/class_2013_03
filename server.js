@@ -7,7 +7,7 @@ function simsimi(me,sender,msg_type,text,res) {
     var return_msg = '不好意思，我只认字。';
     if (text) {        
         var options = {
-            host: 'api.simsimi.com',
+            host: 'sandbox.api.simsimi.com',
             path: '/request.p?key=ab3c48c2-1d95-4266-92f1-e1436aab9b18&text=' + text + '&lc=ch'
         };
         var return_msg = '我是傻的。';
