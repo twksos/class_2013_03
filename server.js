@@ -18,8 +18,8 @@ function simsimi(me,sender,msg_type,text,res) {
             });
             simsimi_res.addListener('end', function(data) {
                 eval('var json= ' + reply);
-                if (json.result == 100) return_msg =  json.response;
-                if (return_msg.indexOf('搜微信号') > 0)return_msg = "哎呀，我刚才发了个呆。"
+                if (json.result == 100) return_msg = json.response;
+                if (return_msg.indexOf('搜微信号') > 0) return_msg = "哎呀，我刚才发了个呆。";
                 var response = '<xml>' + '<ToUserName><![CDATA[' + sender + ']]></ToUserName>' + '<FromUserName><![CDATA[' + me + ']]></FromUserName>' + '<CreateTime>' + Date.now() + '</CreateTime>' + '<MsgType><![CDATA[text]]></MsgType>' + '<Content><![CDATA[' + return_msg + ']]></Content>' + '<FuncFlag>0</FuncFlag>' + '</xml>';
                 res.writeHead(200, {'Content-Type': 'text/plain'});
                 res.end(response);
