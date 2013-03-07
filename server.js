@@ -10,7 +10,7 @@ function simsimi(me,sender,msg_type,text,res) {
             host: 'api.simsimi.com',
             path: '/request.p?key=ab3c48c2-1d95-4266-92f1-e1436aab9b18&text=' + text + '&lc=ch'
         };
-        var return_msg = '糟糕。。。出错了。';
+        var return_msg = '我是傻的。';
         http.get(options, function(simsimi_res) {
             var reply = '';
             simsimi_res.addListener('data', function(data) {
@@ -19,7 +19,7 @@ function simsimi(me,sender,msg_type,text,res) {
             simsimi_res.addListener('end', function(data) {
                 eval('var json= ' + reply);
                 if (json.result == 100) return_msg =  json.response;
-                
+                if (return_msg.indexOf('搜微信号'))return_msg = "哎呀，我刚才发了个呆。"
                 var response = '<xml>' + '<ToUserName><![CDATA[' + sender + ']]></ToUserName>' + '<FromUserName><![CDATA[' + me + ']]></FromUserName>' + '<CreateTime>' + Date.now() + '</CreateTime>' + '<MsgType><![CDATA[text]]></MsgType>' + '<Content><![CDATA[' + return_msg + ']]></Content>' + '<FuncFlag>0</FuncFlag>' + '</xml>';
                 res.writeHead(200, {'Content-Type': 'text/plain'});
                 res.end(response);
@@ -62,8 +62,6 @@ app.post('/', function(req, res) {
         var me = match_var(/<ToUserName><!\[CDATA\[(.*?)\]\]><\/ToUserName>/, xml);
         var sender = match_var(/<FromUserName><!\[CDATA\[(.*?)\]\]><\/FromUserName>/, xml);
         var msg_type = match_var(/<MsgType><!\[CDATA\[(.*?)\]\]><\/MsgType>/, xml);
-            
-        
         if (sender !== null && me !== null) {
             if (msg_type === 'text') {
                 var text = match_var(/<Content><!\[CDATA\[(.*?)\]\]><\/Content>/, xml);
