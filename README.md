@@ -3,22 +3,25 @@ class_2013_03
 
 第一步：申请账号准备
 ----------------
-1. 微信公众平台(需要准备身份证正面照)
-2. Github
-3. heroku
-4. simsimi
+注册以下平台，细节略
+
+1. 微信公众平台(需要准备身份证正面照) http://mp.weixin.qq.com/
+2. Github https://github.com
+3. heroku https://heroku.com
+4. simsimi http://developer.simsimi.com/
 
 第二步（可选）：在Github上创建项目
 ----------------------------
 这里有两种可选方案
 
-1. 创建新项目，并且对照本项目代码自己玩
+1. 创建新项目
 2. 直接fork这个项目
 
 第三步：在cloud9上创建项目
 ----------------------
-1. 如果在Github上已经创建了项目，这里直接在左下角就可以看到
-2. 如果创建项目，可以在cloud9上面创建新项目
+1. 直接登录，有一个Github的图标，可以sign in with github
+2. 如果在Github上已经创建了项目，这里直接在左下角就可以看到
+3. 如果创建项目，可以在cloud9左上点CREATE NEW WORKSPACE
 
 第四步：微信公众平台验证
 -------------------
